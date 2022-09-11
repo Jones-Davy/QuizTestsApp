@@ -49,8 +49,12 @@ button {
     text-transform: uppercase;
 }
 
+
+
 .main {
     padding: 60px 30px;
+    background-image: linear-gradient(to bottom right, #9797eb, #f0f0f0);
+
 }
 
 .main__title {
@@ -99,7 +103,8 @@ button {
 }
 
 .main__btn:hover {
-    background-color: rgb(202, 200, 200);
+    background-color: rgb(144, 115, 211);
+    color: white;
 }
 
 .selection {
@@ -144,10 +149,13 @@ button {
     border: none;
     padding: 16px 20px;
     overflow: hidden;
+    background-image: linear-gradient(to bottom right, #ce81d8, #f8f8f8);
+
+    
 }
 
 .selection__theme:hover {
-    background-color: rgb(179, 174, 174);
+    background-color: rgb(174, 174, 179);
 }
 
 .selection__theme:not(:last-child) {
@@ -312,7 +320,7 @@ fieldset {
 
 @keyframes blink {
     to {
-        box-shadow: 0px 2px 10px rgba(255, 0, 0, 0.55);
+        box-shadow: 0px 2px 10px rgba(255, 0, 0, 0.8);
     }
 }
 
