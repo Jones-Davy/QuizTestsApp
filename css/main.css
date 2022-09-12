@@ -67,15 +67,17 @@ button {
 }
 
 
+
 .aside {
     width: 400px;
-    height: 500px;
+    height: 400px;
     position: absolute;
     left: 40px;
-    top: 190px;
-
-
+    top: 250px;;
 }
+
+
+
 
 @media screen and (max-width: 1760px ) {
     .aside{
