@@ -1,5 +1,4 @@
 'use strict';
-
 const main = document.querySelector('.main');
 const selection = document.querySelector('.selection');
 const title = document.querySelector('.main__title');
@@ -189,8 +188,12 @@ const renderQuiz = (quiz) => {
 
   let result = 0;
   let questionCount = 0;
+ 
 
   const showQuestion = () => {
+
+
+
     const data = quiz.list[questionCount];
     questionCount += 1;
 
@@ -230,14 +233,23 @@ const renderQuiz = (quiz) => {
 
       if (ok) {
         if (answer.every((result, i) => !!result === answersData.keys[i])) {
-            console.log(true)
+        
+         legend.classList.add('true')
           result += 1;
-        } else {
-            console.log(false)
+
+
+        } 
+        
+        else {
+          legend.classList.add('false')
         }
 
         if (questionCount < quiz.list.length) {
-          showQuestion();
+          setTimeout(() => {
+            showQuestion();
+           
+          }, 500);
+          
         } else {
           saveResult(result, quiz.id);
           hideElem(questionBox, () => {
