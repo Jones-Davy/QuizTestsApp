@@ -62,14 +62,14 @@ button {
 .main {
     padding: 60px 30px;
     position: relative;
-   
+    
 
 }
+
 
 .aside {
     width: 400px;
     height: 500px;
-    background-image: url('../img/ZAY2wVpcqEI.jpg');
     position: absolute;
     left: 40px;
     top: 190px;
@@ -343,6 +343,8 @@ fieldset {
 .main__form-question_error .answer__radio::before {
     animation: blink .3s ease-in-out 3;
 }
+
+
 
 .false {
    
