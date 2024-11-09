@@ -231,26 +231,52 @@ const renderQuiz = (quiz) => {
         return input.checked ? input.value : false;
       });
 
+      let isCorrectAnswer = false
+
       if (ok) {
         if (answer.every((result, i) => !!result === answersData.keys[i])) {
-        
-         legend.classList.add('true')
+          legend.classList.add('true')
+          answersData.keys.forEach((key, index) => {
+            if (key === true) {
+                const correctLabel = form.answer[index].parentElement;
+                correctLabel.classList.add('true'); 
+            }
+        });
+
           result += 1;
-
-
-        } 
+          isCorrectAnswer = true
+        }   
         
         else {
           legend.classList.add('false')
+
+          answer.forEach((value, index) => {
+            const selectedLabel = form.answer[index].parentElement;
+            if (value !== false) {
+                selectedLabel.classList.add('false'); 
+            }
+        });
+
+        answersData.keys.forEach((key, index) => {
+            if (key === true) {
+                const correctLabel = form.answer[index].parentElement;
+                correctLabel.classList.add('true'); 
+            }
+        });
+          
+          isCorrectAnswer = false;
         }
+
+        const timeoutTime = isCorrectAnswer ? 500 : 800
 
         if (questionCount < quiz.list.length) {
           setTimeout(() => {
             showQuestion();
            
-          }, 500);
+          }, timeoutTime);
           
         } else {
+          console.log('result', result)
           saveResult(result, quiz.id);
           hideElem(questionBox, () => {
             showResult(result, quiz);
@@ -264,7 +290,7 @@ const renderQuiz = (quiz) => {
         }, 1000)
       }
     })
-  };
+  }
 
   showQuestion();
 };
